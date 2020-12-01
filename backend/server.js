@@ -97,8 +97,8 @@ app.get('/api/fav/:favArr', async (req, res) => {
 
 
 //----------  MISC. ----------
-http.listen(5000, () => {
-    console.log('>> Backend listening on port 5000');
+http.listen(process.env.PORT || 5000, () => {
+    console.log('>> Backend listening.');
 });
 
 //---------- ----------- MESSENGER API INTEGRATION ---------- ----------
