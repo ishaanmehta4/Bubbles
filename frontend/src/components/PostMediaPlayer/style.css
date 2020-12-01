@@ -1,0 +1,17 @@
+.videoPlayer
+{
+    border-radius: 20px;
+    overflow: hidden;
+    width: max-content;
+    height: max-content;
+    /* border: solid 2px; */
+    background-color: black;
+}
+
+@media only screen and (max-width: 365px)
+{
+    .mediaPlayer
+    {
+        max-width: calc(100vw - 80px);
+    }
+}

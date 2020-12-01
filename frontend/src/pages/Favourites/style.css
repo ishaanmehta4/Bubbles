@@ -1,0 +1,16 @@
+#favouritesContainer
+{
+    background-image: url('./profilebg.png');
+    background-position: -250px 0px;
+    background-attachment: fixed ;
+    max-height: 100vh;
+    overflow: scroll;
+}
+
+@media only screen and (max-width: 900px)
+{
+    #favouritesContainer
+    {
+        padding-left: 20px;
+    }
+}

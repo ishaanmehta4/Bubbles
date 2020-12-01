@@ -1,0 +1,77 @@
+.postCardCon
+{
+    border: solid 1px rgba(0,0,0,0.2);
+    /* border: solid 1px rgba(0,0,0,1); */
+    margin-bottom: 10px;
+    width: calc(100% - 100px);
+    margin-left: 50px;
+    background-color: rgba(255,255,255,0.6);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 20px;
+    height: max-content;
+}
+
+@media only screen and (max-width: 900px)
+{
+    .postCardCon
+    {
+        width: calc(100% - 20px);
+        margin-left: 0;
+        height: max-content;
+    }
+}
+
+.postTitle
+{
+     display: inline-block;
+     font-size: 1.4em;
+     font-family: 'Lato';
+     color: rgba(0,0,0,0.7);
+     margin-bottom: 20px;
+     transition: all 0.3s;
+}
+
+.postTitle:hover
+{
+    color: rgba(36, 67, 204, 0.7);
+}
+
+.postUsername
+{
+     display: inline-block;
+     font-size: 1em;
+     font-family: 'Lato';
+     color: rgba(0,0,0,0.7);
+     margin-bottom: 20px;
+     transition: all 0.3s;
+}
+
+.postUername:hover
+{
+    color: rgba(36, 67, 204, 0.7);
+}
+
+.postTimeStamp
+{
+    position: relative;
+    color: rgba(0,0,0,0.55);
+    float: right;
+    top: 2px;
+    font-size: 1em;
+}
+
+.postTimeStamp .lni
+{
+    color: rgba(0,0,0,0.55);
+}
+
+@media only screen and (max-width: 900px)
+{
+    .postTimeStamp
+    {
+        float: none;
+        display: block;
+        margin-bottom: 30px;
+    }
+}

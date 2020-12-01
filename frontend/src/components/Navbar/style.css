@@ -1,0 +1,142 @@
+a 
+{
+    text-decoration: none;
+    color: initial;
+}
+#navbarWrapper
+{
+    width: 100%;
+    transition: all 0.5s;
+    height: 10vh;
+    position: fixed;
+    z-index: 10;
+    display: block;
+    /* border-bottom: solid 1px rgba(0,0,0,0.3); */
+    padding: 0.7em;
+    padding-left: 30px;
+    padding-right: 30px;
+    backdrop-filter: blur(30px) brightness(1.2);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#navLogo
+{
+    filter: contrast(1.3) brightness(0.7);
+    font-size: 2.5em;
+    font-family: 'Dancing Script';
+    background: linear-gradient(124deg, rgba(56,65,234,1) 0%, rgba(22,197,225,1) 53%, rgba(168,44,239,1) 100%);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+}
+
+#navList
+{
+    display: inline-block;
+    float: right;
+}
+
+#navList div
+{
+    line-height: 200%;
+    display: inline-block;
+    margin-left: 30px;
+    color: rgba(0,0,0,0.7);
+    transition: all 0.3s;
+    /* display: none; */
+    font-size: 1.1em;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+}
+
+#navList div:hover
+{
+    background: linear-gradient(124deg, rgba(56,65,234,1) 0%, rgba(22,197,225,1) 53%, rgba(168,44,239,1) 100%);
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: contrast(1.3) brightness(0.7);
+  /* background-color: rgba(0,0,0,0.1); */
+    border: solid 1px;
+    border-image: linear-gradient(124deg, rgba(56,65,234,1) 0%, rgba(22,197,225,1) 53%, rgba(168,44,239,1) 100%) 10;
+}
+
+#navbarOpener
+{
+    transition: all 0.3s;
+    margin-right: 20px;
+    left: -10px;
+    position: relative;
+    font-size: 3em;
+    cursor: pointer;
+    display: inline-block;
+    transform: rotate(0deg);
+    top: -0.4em;
+    opacity: 1;
+    background: linear-gradient(124deg, rgba(56,65,234,1) 0%, rgba(22,197,225,1) 53%, rgba(168,44,239,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: contrast(1.3) brightness(0.7);
+    display: none;
+}
+
+#navbarBreaker
+{
+    display: none;
+}
+
+@media only screen and (max-width: 900px)
+{
+    #navbarBreaker
+    {
+        display: block;
+    }
+    #navbarOpener
+    {
+        display: inline;
+        display: inline-block;
+        top: -0.5em;
+        /* transform: rotate(50deg); */
+    }
+
+    #navLogo
+    {
+        top: -0.45em;
+        font-size: 2em;
+    }
+
+    #navbarWrapper
+    {
+        height: 9vh;
+        overflow: hidden;
+        border-bottom: solid 1px rgba(0,0,0,0.1);
+    }
+
+    #navList
+    {
+        margin-top: 20px;
+    }
+    #navList div
+    {
+        /* display: block; */
+        margin-bottom: 10px;
+        background-color: rgba(0,0,0,0.1);
+        width: calc(100% - 60px);
+        font-size: 1.3em;
+    }
+}
+
+@media only screen and (max-width: 365px)
+{
+    #navLogo
+    {
+        /* font-size: 1.5em; */
+        position: relative;
+        top: -20px;
+
+    }
+}

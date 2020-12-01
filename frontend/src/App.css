@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&family=Dancing+Script&family=Lato&family=Open+Sans:wght@300;400&family=Raleway&family=Roboto&family=Ubuntu&display=swap');
+
+bbody
+{
+    box-sizing: border-box;
+    font-family: 'Lato';
+}
+
+a
+{
+    text-decoration: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
