@@ -10,7 +10,7 @@ const fetch = require('isomorphic-unfetch');
 const user = require("./models/userSchema");
 const post = require("./models/postSchema");
 const { findOne, update } = require('./models/userSchema');
-const keyFilename = process.env.KEY_FILENAME; //replace this with api key file
+const keyFilename = `/${__dirname}/`+process.env.KEY_FILENAME; //replace this with api key file
 const bucketName = `bubblespodcast.appspot.com`;
 const projectId = 'bubblespodcast'
 const { Storage } = require('@google-cloud/storage');
@@ -239,10 +239,10 @@ async function frameMessengerReply(user_psid, text) {
                 try {
                     let savedPost = await newPost.save();
                     await user.findOneAndUpdate({ username: tempUser.username }, { pendingPostId: savedPost._id });
-                    return `Alright, just send a media attachment to upload with the post titled: ${text}.`;
+                    return `Alright, just send an audio/video attachment to upload with the post titled: ${text}.`;
                 } catch (err) { console.log(err); }
             }
-            return `Alright, just send a media attachment to upload with the post titled: ${text}.`;
+            return `Alright, just send an audio/video attachment to upload with the post titled: ${text}.`;
         }
         else {
             return 'You have not signed up on Bubbles yet, send "Join" to create an account.';
@@ -255,6 +255,7 @@ async function replyToAttachment(user_psid, url) {
         let tempUser = await user.findOne({ psid: user_psid });
         if (tempUser) {
             if (tempUser.pendingPostId !== 'none') {
+                console.log('url');
                 let filename = `${tempUser.username}_${tempUser.pendingPostId}.mp4`;
                 await downloadFile(url, filename);
                 await uploadFile(filename);
@@ -299,7 +300,7 @@ async function signUp(user_psid) {
 
     try {
         await new_user.save();
-        return `Welcome ${userData.first_name}, your Bubbles account is ready.\nYour username is @${newUsername}, and the link to you blog is ${publicDomain}/profile/${newUsername}`;
+        return `Welcome ${userData.first_name}, your Bubbles account is ready.\nYour username is @${newUsername}, and the link to you blog is ${publicDomain}/posts/${newUsername}`;
     } catch (error) {
         console.log(error);
         return 'An error occured.';
